@@ -104,10 +104,10 @@ b) Kiekvienai darzovei suteiti CSS class 'pomidoras'
 const h2DOM = document.querySelector('h2');
 h2DOM.innerText = 'Zuikio pomidoru darzas';
 h2DOM.classList.add('pavadinimas');
-
+/*
 // 2.a)
-const darzoves = document.querySelectorAll('li');
-for (let i = 0; i < darzoves.length; i++) {
+const darzoves = document.querySelectorAll('li');  // console.log(darzoves);
+for (let i = 0; i < darzoves.length; i++) {        // console.log(darzoves);
     darzoves[i].innerText = ('Pomidoras');
 }
 
@@ -115,4 +115,11 @@ for (let i = 0; i < darzoves.length; i++) {
 const vegetables = document.querySelectorAll('li');
 for (let i = 0; i < vegetables.length; i++) {
     vegetables[i].classList.add('pomidoras');
+}
+*/
+// ARBA 2 a ir b . viename
+const darzoves = document.querySelectorAll('li');
+for (let i = 0; i < darzoves.length; i++) {
+    darzoves[i].innerText = ('Pomidoras');
+    darzoves[i].classList.add('pomidoras');
 }
