@@ -100,15 +100,18 @@ Padaryti, kad h2 elementas turetu CSS class 'pavadinimas'
 a) Kiekvienos darzoves teksta pakeisti i "Pomidoras"
 b) Kiekvienai darzovei suteiti CSS class 'pomidoras'
 */
+// 1. 
 const h2DOM = document.querySelector('h2');
 h2DOM.innerText = 'Zuikio pomidoru darzas';
 h2DOM.classList.add('pavadinimas');
 
+// 2.a)
 const darzoves = document.querySelectorAll('li');
 for (let i = 0; i < darzoves.length; i++) {
     darzoves[i].innerText = ('Pomidoras');
 }
 
+// 2.b)
 const vegetables = document.querySelectorAll('li');
 for (let i = 0; i < vegetables.length; i++) {
     vegetables[i].classList.add('pomidoras');
