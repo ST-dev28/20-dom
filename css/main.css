@@ -1,4 +1,4 @@
-.antraste {
+/* .antraste {
   color: red;
   text-transform: uppercase;
 }
@@ -16,4 +16,26 @@
 .pomidoras {
   color: red;
   font-size: 20px;
+}
+*/
+header {
+  display: flex;
+  justify-content: space-between;
+  /*align-items: center;*/
+  font-size: 20px;
+}
+.big {
+  font-size: 40px;
+}
+nav {
+  display: none;
+  gap: 10px; /* galima cia idet -> flex-direction: column; */
+}
+nav.visible {
+  display: flex;
+  flex-direction: column; /* kad sukristu meniu vienas po kitu */
+}
+.hamburger {
+  font-size: 40px;
+  cursor: pointer;
 }

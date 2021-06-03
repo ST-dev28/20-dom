@@ -1,4 +1,4 @@
-console.log('labas');
+//console.log('labas');
 
 /* -A-
 Pakeisti tekstini turini h1 elemente i "Labas vakaras!"
@@ -51,7 +51,7 @@ console.log(ingredients);
 Prideti prie jos CSS class, kuri pakeicia teksto spalva i raudona
 
 Surasti visus ingridientus.
-Kiekvienam ingridientui prideti CSS class pavadinimu darzove
+Kiekvienam ingridientui prideti CSS class pavadinimu "darzove"
 */
 /*// 1.
 const h2DOM = document.querySelector('h2');
@@ -80,13 +80,13 @@ for (let i = 0; i < ingredients.length; i++) {
 Kiekvienam ingridientui pakeisti pavadinima i 'Israuta darzove'
 */
 /*
-// 1. 
+// 1.
 const h2DOM = document.querySelector('h2');
 h2DOM.innerText = 'Zuikio darzas';
 */
 /*
 // 2.
-const darzovesDOM = document.querySelectorAll('li');  //vietoj 'darzovesDOM' g.b. 'listDOM' ar tiesiog 'darzoves' ar kt.  
+const darzovesDOM = document.querySelectorAll('li');  //vietoj 'darzovesDOM' g.b. 'listDOM' ar tiesiog 'darzoves' ar kt.
 for (let i = 0; i < darzovesDOM.length; i++) {
     darzovesDOM[i].innerText = ('Israuta darzove');
 }
@@ -100,10 +100,11 @@ Padaryti, kad h2 elementas turetu CSS class 'pavadinimas'
 a) Kiekvienos darzoves teksta pakeisti i "Pomidoras"
 b) Kiekvienai darzovei suteiti CSS class 'pomidoras'
 */
-// 1. 
+/*// 1.
 const h2DOM = document.querySelector('h2');
 h2DOM.innerText = 'Zuikio pomidoru darzas';
 h2DOM.classList.add('pavadinimas');
+*/
 /*
 // 2.a)
 const darzoves = document.querySelectorAll('li');  // console.log(darzoves);
@@ -117,9 +118,11 @@ for (let i = 0; i < vegetables.length; i++) {
     vegetables[i].classList.add('pomidoras');
 }
 */
-// ARBA 2 a ir b . viename
+/* // ARBA 2 a ir b . viename
 const darzoves = document.querySelectorAll('li');
 for (let i = 0; i < darzoves.length; i++) {
     darzoves[i].innerText = ('Pomidoras');
     darzoves[i].classList.add('pomidoras');
 }
+*/
+
