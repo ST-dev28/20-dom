@@ -18,6 +18,7 @@
   font-size: 20px;
 }
 */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -38,4 +39,35 @@ nav.visible {
 .hamburger {
   font-size: 40px;
   cursor: pointer;
+}
+
+form {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+button {
+  padding: 10px 30px;
+  font-size: 50px;
+  line-height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px #0002;
+}
+.minus {
+  background-color: red;
+  color: #fff;
+}
+.plus {
+  background-color: green;
+  color: #fff;
+}
+.number {
+  padding: 10px 30px;
+  font-size: 50px;
+  line-height: 30px;
 }
