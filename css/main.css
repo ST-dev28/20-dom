@@ -40,7 +40,9 @@ nav.visible {
   font-size: 40px;
   cursor: pointer;
 }
-
+h1 {
+  text-align: center;
+}
 form {
   display: flex;
   gap: 20px;
