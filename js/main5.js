@@ -6,7 +6,6 @@ Formoje parasytas tekstas, po `submit` mygtuko paspaudimo turi buti atvaizduotas
 pvz.: `element.value`
 */
 
-let tekstas = '';
 
 const buttonDOM = document.querySelector('button');
 const inputDOM = document.querySelector('input');
