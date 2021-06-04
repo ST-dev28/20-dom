@@ -13,8 +13,8 @@ const spanDOM = document.querySelector('span');
 
 
 buttonDOM.addEventListener('click', (event) => {
-    event.preventDefault();
+    event.preventDefault();   // puslapis nepersikrauna is karto paspaudus 'submit'
     spanDOM.innerText = inputDOM.value;
     inputDOM.value = '';  //antra karta paspaudus 'submit' istrina teksta
-    //console.log('test');
+    //console.log('test');    // patikrinimui, kaip veikia 'preventDefault'
 })
