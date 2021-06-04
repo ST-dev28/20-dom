@@ -1,0 +1,50 @@
+body,
+body * {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+}
+h1 {
+  text-align: center;
+}
+form {
+  display: flex;
+  gap: 20px;
+}
+button {
+  padding: 10px 30px;
+  font-size: 50px;
+  line-height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px #0002;
+}
+.minus {
+  background-color: red;
+  color: #fff;
+}
+.plus {
+  background-color: green;
+  color: #fff;
+}
+.number {
+  padding: 10px 30px;
+  font-size: 50px;
+  line-height: 30px;
+}
+ul {
+  font-size: 20px;
+}
