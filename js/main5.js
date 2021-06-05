@@ -4,6 +4,8 @@ Formoje parasytas tekstas, po `submit` mygtuko paspaudimo turi buti atvaizduotas
 
 `input` elemento reiksme istraukia kreipiantis i to elemento `value` parametra,
 pvz.: `element.value`
+
+po ivesto teksto nuskaitymo, isvalyti ivesties lauka `input`
 */
 
 
