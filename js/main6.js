@@ -15,19 +15,18 @@ Po ivesto teksto nuskaitymo, isvalyti ivesties lauka `input`
 */
 
 const buttonDOM = document.querySelector('button');
-const inputDOM = document.querySelector('input');
+const inputMessageDOM = document.querySelector('input');
 const spanDOM = document.querySelector('span');
 
-const inputMessageDOM = document.querySelector('#message');
 const backgroundColor = document.querySelector('#bg-color');
-const textColor = document.querySelector('#text-color');    // html suteiktas input type=color ir value='#spalva'
+const textColor = document.querySelector('#text-color');    // html suteiktas input type=color ir value='#spalva. Spalva bet kokia pradziai. 
 
 inputDOM.style.color = 'red';
 
 buttonDOM.addEventListener('click', (event) => {
     event.preventDefault();                    // isjungia delfault savybes, kad nepersikrautu
-    spanDOM.innerText = inputDOM.value;
-    inputDOM.value = '';
+    spanDOM.innerText = inputMessageDOM.value;
+    inputMessageDOM.value = '';
 
     // priskiriam elementui spalvas
     spanDOM.style.color = textColor.value;                  // arba  =`${textColor.value}`;
