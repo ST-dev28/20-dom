@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+}
+form {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-row > .inline {
+  display: flex;
+  gap: 20px;
+}
+button {
+  padding: 10px 40px;
+  font-size: 30px;
+}
+.order {
+  width: 300px;
+  padding: 40px;
+  border: 5px dotted #36f;
+}
