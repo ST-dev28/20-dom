@@ -22,16 +22,18 @@ const gerimaiDOM = document.querySelectorAll('input[name="gerimas"]');
 //console.log(gerimaiDOM);
 
 const customerChoise = item => item.checked ? 'nori' : 'nenori';
+const customerName = name => customer.value === '' ? 'nenurodes vardo' : 'vardu ' + customer.value;
 
 function drinkChoise(drink) {
-    let drinkName = ''
+
     for (let i = 0; i < gerimaiDOM.length; i++) {
-        if (gerimaiDOM[i].checked === true) return drinkName = gerimaiDOM[i].value;
-        return '--';
+        if (gerimaiDOM[i].checked === true) return drinkName = gerimaiDOM[i].value + ' yra pasitinktas gerimas';
+        if (gerimaiDOM[i].checked != true) return 'nenori jokio gerimo';
+        //return '--';
     }
 }
 
 buttonDOM.addEventListener('click', (event) => {
     event.preventDefault();                    // isjungia delfault savybes, kad nepersikrautu
-    order.innerText = `Uzsakovas vardu ${customer.value}, ${customerChoise(sriuba)} sriubos, ${customerChoise(patiekalas)} pagrindinio patiekalo,  ${customerChoise(desertas)} deserto ir ${drinkChoise(gerimaiDOM)} yra pasirinktas gerimas.`
+    order.innerText = `Uzsakovas ${customerName(customer.value)}, ${customerChoise(sriuba)} sriubos, ${customerChoise(patiekalas)} pagrindinio patiekalo,  ${customerChoise(desertas)} deserto ir ${drinkChoise(gerimaiDOM)}.`
 })
