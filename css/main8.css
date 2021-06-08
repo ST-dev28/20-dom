@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+.lenta {
+  display: flex;
+  gap: 40px;
+  padding: 20px 80px;
+  font-size: 100px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+.aikstele {
+  display: flex;
+  gap: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+button {
+  line-height: 50px;
+  font-size: 30px;
+}
