@@ -15,7 +15,6 @@ Funkcijos uzduotis, pagal duota skaiciuka sugeneruoti `<div>` elementu sarasa ir
 kiekviename ju irasyti eiles numeri (1, 2, 3...)
 */
 
-const lentaDOM = document.querySelector('.lenta');
 
 function genetuotiLenta(selector, count) {
     const DOM = document.querySelector(selector);
