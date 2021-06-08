@@ -10,6 +10,11 @@ kurios sablonas yra toks:
 [nori/nenori] deserto ir [gerimo pavadinimas] yra pasirinktas gerimas."
 
 `input` elementu tipus pasikoreguoti pagal poreiki.
+
+Reikia graziai susitvarkyti su situacija, kai klientas nenurodo savo vardo
+
+Reikia graziai susitvarkyti su situacija, kai klientas nepasirenka gerimo
+
 */
 
 const buttonDOM = document.querySelector('button');
