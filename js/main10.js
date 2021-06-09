@@ -12,15 +12,18 @@ Funkcijos uzduotis, pagal duota ikonu sarasa sugeneruoti `<i>` elementus, kuriuo
 Visas sugeneruotas tekstinis HTML turi buti istatytas i nurodyta selector'iaus elementa
 */
 
-const icons = ['facebook', 'twitter', 'linkedin'];
+const icons = ['facebook', 'twitter', 5, [], '', 'linkedin'];
 
 function generuotiSocials(selector, list) {
     const DOM = document.querySelector(selector);
-    if (!DOM) {
-        console.error('ERROR: nerastas elementas');
+
+    if (selector === '' ||
+        typeof selector !== 'string') {
         return false;
     }
-    if (list === '') {
+
+    if (!Array.isArray(list) ||
+        list.length === 0) {
         console.error('ERROR: sarasas negali buti tuscias');
         return false;
     }
@@ -28,12 +31,21 @@ function generuotiSocials(selector, list) {
     let HTML = '';
     for (let i = 0; i < list.length; i++) {
         //console.log(i);
-        const iconsFull = 'fa fa-' + icons[i];
-        HTML += `<i class="${iconsFull}"></i>`;
-        //console.log(HTML);
+        if (typeof icons[i] === 'string' &&
+            icons[i] !== '') {
+            const iconsFull = 'fa fa-' + icons[i];
+            HTML += `<i class="${iconsFull}"></i>`;  // arba `<i class="fa fa-${icons[i]}"></i>`
+            //console.log(HTML); 
+        }
+
+
+        /*  ---ARBA--- 
+        for (let element of array){
+          HTML += `<i class="fa fa-${element}"></i>`
+        }
+        */
     }
     DOM.innerHTML = HTML;     //sugeneruoja HTML
 }
-
 
 generuotiSocials('.socials', icons);
