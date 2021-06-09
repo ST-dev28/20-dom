@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px #0002;
+}
+.logo {
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+}
+nav {
+  display: flex;
+  gap: 20px;
+}
+nav > a {
+  color: #36f;
+  font-size: 24px;
+}
