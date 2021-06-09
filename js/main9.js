@@ -23,7 +23,7 @@ function genetuotiLenta(selector, count) {
         return false;
     }
     if (count < 0 ||
-        count % 1 !== 0) { // jei suliekana, salygos neatitinka
+        count % 1 !== 0) { // jei su liekana, salygos neatitinka
         console.error('ERROR: skaicius turi buti teigiamas');
         return false;
     }
@@ -38,4 +38,4 @@ function genetuotiLenta(selector, count) {
 }
 
 
-genetuotiLenta('div', 4);  // ziurim konsoleje, ka randa
+genetuotiLenta('div', 8);  // ziurim konsoleje, ka randa
