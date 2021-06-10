@@ -35,6 +35,7 @@ const menu = [
 
 function renderNav(selector, list) {
     const DOM = document.querySelector(selector);
+    //console.log(DOM);
 
     if (!Array.isArray(list) ||
         list.length === 0) {
@@ -51,7 +52,7 @@ function renderNav(selector, list) {
         HTML2 = `</nav>`
     }
     DOM.innerHTML = HTML1 + HTML + HTML2;
+    DOM.insertAdjacentHTML('afterbegin', '<img src="#" alt="Logo" class="logo">');
 }
-
 
 renderNav('header', menu);
