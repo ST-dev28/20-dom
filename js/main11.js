@@ -52,6 +52,7 @@ function renderNav(selector, list) {
         HTML2 = `</nav>`
     }
     DOM.innerHTML = HTML1 + HTML + HTML2;
+    // arba-->>  DOM.innerHTML = `<nav> ${HTML} </nav>`;
     DOM.insertAdjacentHTML('afterbegin', '<img src="#" alt="Logo" class="logo">');
 }
 
