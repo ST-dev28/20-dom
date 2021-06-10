@@ -8,10 +8,11 @@ ir`<button>` elementu.
 Paspaudus submit mygtuka, pasirinkta`<select>` reiksme turi buti
 atvaizduota`.option` elemente.
 */
+
 const animals = ['zuikis', 'barsukas', 'lape', 'vilkas', 'sernas', 'stirna', 'vovere'];
+
 function renderOption(selector, list) {
-    const DOM = document.querySelector(selector);
-    const labelDOM = document.querySelector('label');
+    const labelDOM = document.querySelector(selector);
 
     let HTML = '';
     for (const item of list) {
@@ -21,4 +22,20 @@ function renderOption(selector, list) {
     labelDOM.insertAdjacentHTML('afterend', `<select> ${HTML} </select>`);
 }
 
-renderOption('form', animals);
+renderOption('label', animals);
+
+
+const spanDOM = document.querySelector('.option');
+const buttonDOM = document.querySelector('button');
+const selectDOM = document.querySelector('select');
+
+//console.log(buttonDOM);
+//console.log(selectDOM);
+//console.log(spanDOM);
+
+buttonDOM.addEventListener('click', (event) => {
+    event.preventDefault();       // puslapis nepersikrauna is karto paspaudus 'submit'
+    spanDOM.innerText = selectDOM.value;
+    selectDOM.value = '';         //antra karta paspaudus 'submit' istrina teksta
+})
+
