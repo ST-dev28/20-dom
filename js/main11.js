@@ -54,6 +54,23 @@ function renderNav(selector, list) {
     DOM.innerHTML = HTML1 + HTML + HTML2;
     // arba-->>  DOM.innerHTML = `<nav> ${HTML} </nav>`;
     DOM.insertAdjacentHTML('afterbegin', '<img src="#" alt="Logo" class="logo">');
+
+    // arba be DOM.innerHTML tiesiog-->> 
+    //DOM.insertAdjacentHTML('beforeend', `<nav>${HTML}</nav>`);
 }
 
 renderNav('header', menu);
+
+
+/*  Alternatyvus variantas---
+function renderNav(headeris, list) {
+    const headerisDOM = document.querySelector(headeris);
+    const logo = headerisDOM.querySelector('.logo');
+
+    let HTML = '';
+    for (let i in list) {
+        HTML += `<a href="${list[i].href}">${list[i].title}</a>`;
+    }
+    logo.insertAdjacentHTML('afterend', `<nav>${HTML}</nav>`);
+}
+*/
