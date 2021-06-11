@@ -9,15 +9,21 @@ Paspaudus submit mygtuka, pasirinkta`<select>` reiksme turi buti
 atvaizduota`.option` elemente.
 */
 
-const animals = ['zuikis', 'barsukas', 'lape', 'vilkas', 'sernas', 'stirna', 'vovere'];
+const animals = ['zuikis', 'barsukas', 'lapė', 'vilkas', 'šernas', 'stirna', 'voverė'];
 
 function renderOption(selector, list) {
     const labelDOM = document.querySelector(selector);
 
+    if (!Array.isArray(list) ||
+        list.length === 0) {
+        console.error('ERROR: sarasas negali buti tuscias');
+        return false;
+    }
+
     let HTML = '';
     for (const item of list) {
         HTML += `<option value="${item}">${item}</option>`;
-        console.log(HTML);
+        //console.log(HTML);
     }
     labelDOM.insertAdjacentHTML('afterend', `<select> ${HTML} </select>`);
 }
