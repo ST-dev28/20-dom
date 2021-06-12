@@ -10,7 +10,7 @@ atvaizduota`.option` elemente.
 
 Papildymas: pridetas label su darzovemis
 */
-
+/*
 // https://www.w3schools.com/tags/tag_select.asp
 
 function renderSelect(selector, dataList, id) {
@@ -48,3 +48,40 @@ buttonDOM.addEventListener('click', (event) => {
     optionDOM.innerText = pasirinkimuZinute;
 })
 
+*/
+//  --MANO SPRENDINYS--
+
+const animals = ['zuikis', 'barsukas', 'lapė', 'vilkas', 'šernas', 'stirna', 'voverė', 'driežas', 'ežiukas'];
+
+function renderSelect(selector, list) {
+    const labelDOM = document.querySelector(selector);
+
+    if (!Array.isArray(list) ||
+        list.length === 0) {
+        console.error('ERROR: sarasas negali buti tuscias');
+        return false;
+    }
+
+    let HTML = '';
+    for (const item of list) {
+        HTML += `<option value="${item}">${item}</option>`;
+        //console.log(HTML);
+    }
+    labelDOM.insertAdjacentHTML('afterend', `<select> ${HTML} </select>`);
+}
+
+renderSelect('label', animals); // 'label' rodo, kur bus patalbinta gauta info. 'animals' rodo musuu turima sarasa
+
+const spanDOM = document.querySelector('.option');
+const buttonDOM = document.querySelector('button');
+const selectDOM = document.querySelector('select');
+
+//console.log(buttonDOM);
+//console.log(selectDOM);
+//console.log(spanDOM);
+
+buttonDOM.addEventListener('click', (event) => {
+    event.preventDefault();       // puslapis nepersikrauna is karto paspaudus 'submit'
+    spanDOM.innerText = selectDOM.value;
+    selectDOM.value = '';         //antra karta paspaudus 'submit' istrina teksta
+})
