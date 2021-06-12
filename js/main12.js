@@ -9,9 +9,9 @@ Paspaudus submit mygtuka, pasirinkta`<select>` reiksme turi buti
 atvaizduota`.option` elemente.
 */
 
-const animals = ['zuikis', 'barsukas', 'lapė', 'vilkas', 'šernas', 'stirna', 'voverė'];
+const animals = ['zuikis', 'barsukas', 'lapė', 'vilkas', 'šernas', 'stirna', 'voverė', 'driežas', 'ežiukas'];
 
-function renderOption(selector, list) {
+function renderSelect(selector, list) {
     const labelDOM = document.querySelector(selector);
 
     if (!Array.isArray(list) ||
@@ -28,8 +28,10 @@ function renderOption(selector, list) {
     labelDOM.insertAdjacentHTML('afterend', `<select> ${HTML} </select>`);
 }
 
-renderOption('label', animals);
+renderSelect('label', animals); // 'label' rodo, kur bus patalbinta gauta info. 'animals' rodo musuu turima sarasa
 
+//const birds = ['kekstas', 'zvirbliukas', 'peleda', 'balandis', 'varna', 'zylute', 'strazdas', 'sarka', 'genys'];
+//renderSelect('label', birds);
 
 const spanDOM = document.querySelector('.option');
 const buttonDOM = document.querySelector('button');
