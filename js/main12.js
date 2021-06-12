@@ -7,43 +7,44 @@ ir`<button>` elementu.
 
 Paspaudus submit mygtuka, pasirinkta`<select>` reiksme turi buti
 atvaizduota`.option` elemente.
+
+Papildymas: pridetas label su darzovemis
 */
 
-const animals = ['zuikis', 'barsukas', 'lapė', 'vilkas', 'šernas', 'stirna', 'voverė', 'driežas', 'ežiukas'];
+// https://www.w3schools.com/tags/tag_select.asp
 
-function renderSelect(selector, list) {
-    const labelDOM = document.querySelector(selector);
+function renderSelect(selector, dataList, id) {
+    // susirandame vieta, kur zemiau kurio elemento tures nugulti naujas turinys
+    const DOM = document.querySelector(selector);
 
-    if (!Array.isArray(list) ||
-        list.length === 0) {
-        console.error('ERROR: sarasas negali buti tuscias');
-        return false;
+    // susigeneruojame visus galimus select pasirinkimus
+    let optionsHTML = '';
+    for (const dataItem of dataList) {
+        optionsHTML += `<option value="${dataItem}">${dataItem}</option>`;
     }
 
-    let HTML = '';
-    for (const item of list) {
-        HTML += `<option value="${item}">${item}</option>`;
-        //console.log(HTML);
-    }
-    labelDOM.insertAdjacentHTML('afterend', `<select> ${HTML} </select>`);
+    // sukonstruojame galutini select elementa ir istatome i reikiama vieta
+    const HTML = `<select id="${id}">${optionsHTML}</select>`;
+    DOM.insertAdjacentHTML('afterend', HTML);
 }
 
-renderSelect('label', animals); // 'label' rodo, kur bus patalbinta gauta info. 'animals' rodo musuu turima sarasa
+const animals = ['zuikis', 'barsukas', 'lape', 'vilkas', 'sernas', 'stirna', 'vovere'];
+renderSelect('label[for="animal"]', animals, 'animal');
 
-//const birds = ['kekstas', 'zvirbliukas', 'peleda', 'balandis', 'varna', 'zylute', 'strazdas', 'sarka', 'genys'];
-//renderSelect('label', birds);
+const vegetables = ['morka', 'svogunas', 'bulve'];
+renderSelect('label[for="vegetable"]', vegetables, 'vegetable');
 
-const spanDOM = document.querySelector('.option');
+const allSelectDOM = document.querySelectorAll('select');
+
 const buttonDOM = document.querySelector('button');
-const selectDOM = document.querySelector('select');
-
-//console.log(buttonDOM);
-//console.log(selectDOM);
-//console.log(spanDOM);
+const optionDOM = document.querySelector('.option');
 
 buttonDOM.addEventListener('click', (event) => {
-    event.preventDefault();       // puslapis nepersikrauna is karto paspaudus 'submit'
-    spanDOM.innerText = selectDOM.value;
-    selectDOM.value = '';         //antra karta paspaudus 'submit' istrina teksta
+    event.preventDefault();
+
+    const pasirinkimai = Array.from(allSelectDOM).map(DOM => DOM.value);
+
+    const pasirinkimuZinute = pasirinkimai.join(', ');
+    optionDOM.innerText = pasirinkimuZinute;
 })
 
