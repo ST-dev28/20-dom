@@ -17,9 +17,6 @@ const optionDOM = document.querySelector('.option');
 const buttonDOM = document.querySelector('button');
 const inputDOM = document.getElementById('board');
 const boardDOM = document.querySelector('.board');
-const allRows = boardDOM.querySelectorAll('.row');
-console.log(allRows);
-
 
 buttonDOM.addEventListener('click', (e) => {
     e.preventDefault();
@@ -31,13 +28,20 @@ buttonDOM.addEventListener('click', (e) => {
 function renderBoard(DOMelement, boardSize) {
     const rowHeight = 100 / boardSize;
     const cellWidth = 100 / boardSize;
+    
     let rowHTML = '';
     let cellHTML = '';
 
-    
     for (let i = 0; i < boardSize; i++) {
         cellHTML = `<div class="cell" style="width:${cellWidth}%;"></div>`;
         rowHTML += `<div class="row" style="height: ${rowHeight}%;">${cellHTML.repeat(inputDOM.value)}</div>`;
+        
+        if (inputDOM.value % 2 === 0) {    
+
+        }
+
     }
     DOMelement.innerHTML = rowHTML;
 }
+  
+
