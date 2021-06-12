@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.option {
+  padding: 0 10px;
+  border-bottom: 1px dotted red;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+input,
+button {
+  padding: 5px 20px;
+  font-size: 30px;
+  line-height: 40px;
+}
+.board {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  box-shadow: 0 0 10px #0005;
+}
+.row {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid orange;
+}
+.cell {
+  height: 100%;
+  float: left;
+  border: 1px solid red;
+}
