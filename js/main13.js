@@ -31,17 +31,16 @@ function renderBoard(DOMelement, boardSize) {
     
     let rowHTML = '';
     let cellHTML = '';
-
     for (let i = 0; i < boardSize; i++) {
-        cellHTML = `<div class="cell" style="width:${cellWidth}%;"></div>`;
-        rowHTML += `<div class="row" style="height: ${rowHeight}%;">${cellHTML.repeat(inputDOM.value)}</div>`;
-        
-        if (inputDOM.value % 2 === 0) {    
-
+        if (i % 2 === 0) { 
+            cellHTML = `<div class="cell" style="width:${cellWidth}%; background-color: black"></div>`;  
+        } else {
+            cellHTML = `<div class="cell" style="width:${cellWidth}%; background-color: white"></div>`;  
         }
-
+        //cellHTML = `<div class="cell" style="width:${cellWidth}%;"></div>`;
+        rowHTML += `<div class="row" style="height: ${rowHeight}%;">${cellHTML.repeat(inputDOM.value)}</div>`;
     }
     DOMelement.innerHTML = rowHTML;
 }
-  
+
 
