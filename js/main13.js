@@ -28,19 +28,31 @@ buttonDOM.addEventListener('click', (e) => {
 function renderBoard(DOMelement, boardSize) {
     const rowHeight = 100 / boardSize;
     const cellWidth = 100 / boardSize;
-    
+
     let rowHTML = '';
-    let cellHTML = '';
+    let cellHTML = `<div class="cell" style="width:${cellWidth}%;"></div>`.repeat(inputDOM.value);
+
     for (let i = 0; i < boardSize; i++) {
-        if (i % 2 === 0) { 
-            cellHTML = `<div class="cell" style="width:${cellWidth}%; background-color: black"></div>`;  
-        } else {
-            cellHTML = `<div class="cell" style="width:${cellWidth}%; background-color: white"></div>`;  
-        }
+        /* if (i % 2 === 0) { 
+             cellHTML = `<div class="cell" style="width:${cellWidth}%; background-color: black"></div>`;  
+         } else {
+             cellHTML = `<div class="cell" style="width:${cellWidth}%; background-color: white"></div>`;  
+         }*/
         //cellHTML = `<div class="cell" style="width:${cellWidth}%;"></div>`;
-        rowHTML += `<div class="row" style="height: ${rowHeight}%;">${cellHTML.repeat(inputDOM.value)}</div>`;
+        rowHTML += `<div class="row" style="height: ${rowHeight}%;">${cellHTML}</div>`;
     }
     DOMelement.innerHTML = rowHTML;
+
+    const allCells = DOMelement.querySelectorAll('.cell');
+    const cells = Array.from(allCells);
+    //console.log(langeliai);
+
+    for (let j = 0; j < cells.length; j++) {
+        const cell = cells[j];
+        if (j % 2 === 0) {
+            cell.classList.add('black');
+        }
+    }
 }
 
 
