@@ -11,6 +11,8 @@ reikiama kieki `.row` elementu.
 3. Pagal pasirinkta lentos dydi, reikia sugeneruoti reikiama kieki `.cell` elementu. 
 Atsizvelgiant i ju kieki, kiekvieno langelio dydis turi buti tinkamas, jog visi tilptu 
 i tevini elementa `.row`
+
+Kiekvienoje eiluteje langeliai turi buti piesiami pakaitomis. Pirmoje - balta/juoda, antroje - juoda/balta ir t.t.
 */
 
 const optionDOM = document.querySelector('.option');
@@ -22,6 +24,7 @@ buttonDOM.addEventListener('click', (e) => {
     e.preventDefault();
     const n = parseInt(inputDOM.value);
     optionDOM.textContent = `${n}x${n}`;
+    inputDOM.value = '';
     renderBoard(boardDOM, n);
 })
 
@@ -29,35 +32,34 @@ function renderBoard(DOMelement, boardSize) {
     const elementSize = 100 / boardSize;
     //const cellHTML = `<div class="cell" style="width: ${elementSize}%;"></div>`.repeat(boardSize);  //variantas su repeat
     //const rowHTML = `<div class="row" style="height: ${elementSize}%;">${cellHTML}</div>`; 
-    // DOMelement.innerHTML = rowHTML.repeat(boardSize);
+    //DOMelement.innerHTML = rowHTML.repeat(boardSize);
 
-    let rowHTML = '';
-    let cellHTML = '';
+    let whiteBlackCellHTML = '';
+    let blackWhiteCellHTML = '';
+    let HTML = '';
+    const whiteCellHTML = `<div class="cell" style="width: ${elementSize}%; background-color: white;"></div>`;
+    const blackCellHTML = `<div class="cell" style="width: ${elementSize}%; background-color: black;"></div>`;
 
-    for (let j = 1; j <= boardSize; j++) {
-        cellHTML += `<div class="cell" style="width: ${elementSize}%;"></div>`;
-    }
-    for (let i = 0; i < boardSize; i++) {
-        rowHTML += `<div class="row" style="height: ${elementSize}%;">${cellHTML}</div>`;
-    }
-
-    DOMelement.innerHTML = rowHTML;
-
-    const allCells = DOMelement.querySelectorAll('.cell');
-    const cells = Array.from(allCells);
-    //console.log(langeliai);
-
-    for (let j = 0; j < cells.length; j++) {
-        const cell = cells[j];
-        if (j % 2 === 0) {
-            cell.classList.add('black');
+    for (let c = 0; c < boardSize; c++) {
+        if (c % 2 === 0) {
+            whiteBlackCellHTML += whiteCellHTML;
+            blackWhiteCellHTML += blackCellHTML;
+        } else {
+            whiteBlackCellHTML += blackCellHTML;
+            blackWhiteCellHTML += whiteCellHTML;
         }
     }
-}
 
-/*
-if (j % 2 === 0) {
-    cellHTML = `<div class="cell" style="width:${elementSize}%; background-color: black"></div>`;
-} else {
-    cellHTML = `<div class="cell" style="width:${elementSize}%; background-color: white"></div>`;
-}*/
+    let cellHTML = '';
+    for (let r = 0; r < boardSize; r++) {
+        if (r % 2 === 0) {
+            cellHTML = whiteBlackCellHTML;
+        } else {
+            cellHTML = blackWhiteCellHTML;
+        }
+        // cellHTML = r % 2 === 0 ? whiteBlackCellHTML : blackWhiteCellHTML;       // ternaly -->> IF sutrumpinimas
+        HTML += `<div class="row" style="height: ${elementSize}%;">${cellHTML}</div>`;
+    }
+
+    DOMelement.innerHTML = HTML;
+}

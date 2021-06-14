@@ -32,10 +32,9 @@ button {
   display: inline-block;
   width: 100%;
   /*padding: 10px;*/
-  border: 1px solid orange;
 }
 .cell {
   height: 100%;
   float: left;
-  border: 1px solid red;
+  border: 1px solid #ccc;
 }
