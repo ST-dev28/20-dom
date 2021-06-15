@@ -27,11 +27,11 @@ function timeset() {
 timeset(timeinterval);
 */
 //  ANTRAS variantas
-function times(start, end) {
+function times(start, end, interval) {
     for (let p = start; p < end; p++) {
-        for (let r = 0; r < 60; r += 15) {
-            console.log(`${p}:${r}`);  //  console.log(`${p}:${r < 10 ? '0' + m : m}`); -->> minutes dvizenkliu skaiciumi
+        for (let r = 0; r < 60; r++) {
+            console.log(`${p}:${r + interval}`);  //  console.log(`${p}:${r < 10 ? '0' + m : m}`); -->> minutes dvizenkliu skaiciumi
         }
     }
 }
-times(1, 7);
+times(1, 7, 31);
