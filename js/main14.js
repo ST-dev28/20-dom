@@ -30,7 +30,7 @@ timeset(timeinterval);
 function times(start, end) {
     for (let p = start; p < end; p++) {
         for (let r = 0; r < 60; r += 15) {
-            console.log(`${p}:${r}`);
+            console.log(`${p}:${r}`);  //  console.log(`${p}:${r < 10 ? '0' + m : m}`); -->> minutes dvizenkliu skaiciumi
         }
     }
 }
