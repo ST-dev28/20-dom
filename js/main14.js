@@ -26,12 +26,30 @@ function timeset() {
 }
 timeset(timeinterval);
 */
-//  ANTRAS variantas
-function times(start, end, interval) {
+/*
+//  #19b uzduotis
+function times(start, end) {
     for (let p = start; p < end; p++) {
-        for (let r = 0; r < 60; r++) {
-            console.log(`${p}:${r + interval}`);  //  console.log(`${p}:${r < 10 ? '0' + m : m}`); -->> minutes dvizenkliu skaiciumi
+        for (let r = 0; r < 60; r += 15) {
+            console.log(`${p}:${r}`);  //  console.log(`${p}:${r < 10 ? '0' + m : m}`); -->> minutes dvizenkliu skaiciumi
         }
     }
 }
-times(1, 7, 31);
+times(1, 7);
+*/
+//  #19c uzduotis
+function timesInterval(start, end, step) {
+    const mins = 60;
+    //const tm = Math.floor((end - start) * mins / step) + 1;
+    //console.log(tm);
+    for (let b = start * mins; b <= end * mins; b += step) {
+        const h = Math.floor(b / mins);
+        //arba h kitaip -->>
+        //const h = (b - m) / 60;
+        const m = b - (h * 60);
+        //arba vietoje sio tiesiog -->> 
+        //const m = b % 60;
+        console.log(`${h}:${m < 10 ? '0' + m : m}`);   //-->> minutes dvizenkliu skaiciumi
+    }
+}
+timesInterval(1, 4, 31);
