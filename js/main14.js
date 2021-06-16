@@ -82,7 +82,18 @@ function timeOverNight(from, till, interval) {
     }
 }
 timeOverNight(22, 12, 45);
+
+// ---ARBA---
+function time(nuo, iki, trukme) {
+  iki = nuo > iki ? iki + 24 : iki;
+  for (let i = nuo * 60; i <= iki * 60; i += trukme) {
+    const m = i % 60;
+    const h = ((i - m) / 60) % 24;
+    console.log(`${h < 10 ? '0' + h : h}:${m < 10 ? '0' + m : m}`);
+  }
+}
 */
+
 // #20 uzduotis
 function tortoGabalas(tortuKiekis, zmoniuKiekis, tortoSvoris) {
     const zmoniuPerTorta = Math.ceil(zmoniuKiekis / tortuKiekis);
