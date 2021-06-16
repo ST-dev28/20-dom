@@ -36,7 +36,7 @@ function times(start, end) {
     }
 }
 times(1, 7);
-*/
+*//*
 //  #19c uzduotis
 function timesInterval(start, end, step) {
     const mins = 60;
@@ -53,3 +53,33 @@ function timesInterval(start, end, step) {
     }
 }
 timesInterval(1, 4, 31);
+*/
+// #19d uzduotis - laiko tarpas per vidurnakti
+function timeOverMidnight(from, till, interval) {
+    const day = 24;
+    const newTill = till + day;
+    for (let c = from * 60; c <= newTill * 60; c += interval) {
+        const hr = Math.floor(c / 60);
+        const ms = c - hr * 60;
+        const hrModf = hr % 24;
+        console.log(`${hrModf < 10 ? '0' + hrModf : hrModf}:${ms < 10 ? '0' + ms : ms}`);
+    }
+}
+timeOverMidnight(22, 1, 45);
+/*
+// ----ARBA ----
+function timeOverNight(from, till, interval) {
+    let changedTill = till;
+    const day = 24;
+    if (from > till) {
+        changedTill = till + day;
+    }
+    for (let e = from * 60; e <= changedTill * 60; e += interval) {
+        const hrs = Math.floor(e / 60);
+        const mns = e - hrs * 60;
+        const hrsModified = hrs % 24;
+        console.log(`${hrsModified < 10 ? '0' + hrsModified : hrsModified}:${mns < 10 ? '0' + mns : mns}`);
+    }
+}
+timeOverNight(22, 12, 45);
+*/
